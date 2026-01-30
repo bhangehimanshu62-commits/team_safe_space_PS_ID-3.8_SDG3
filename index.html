@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UHRA - Universal Health Record Aggregator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-root">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar__logo">
+        <div class="sidebar__logo-icon">U</div>
+        <div class="sidebar__logo-text">
+          <span class="sidebar__logo-title">UHRA</span>
+          <span class="sidebar__logo-subtitle">Health Cloud</span>
+        </div>
+      </div>
+      <nav class="sidebar__nav">
+        <button class="nav-link active" data-target="home-section">
+          <span class="nav-link__icon">🏠</span>
+          <span class="nav-link__text">Home</span>
+        </button>
+        <button class="nav-link" data-target="dashboard-section">
+          <span class="nav-link__icon">📋</span>
+          <span class="nav-link__text">Dashboard</span>
+        </button>
+        <button class="nav-link" data-target="hospitals-section">
+          <span class="nav-link__icon">🏥</span>
+          <span class="nav-link__text">Hospitals</span>
+        </button>
+        <button class="nav-link" data-target="security-section">
+          <span class="nav-link__icon">🔒</span>
+          <span class="nav-link__text">Security</span>
+        </button>
+        <button class="nav-link" data-target="analytics-section">
+          <span class="nav-link__icon">📈</span>
+          <span class="nav-link__text">Analytics</span>
+        </button>
+        <button class="nav-link" data-target="contact-section">
+          <span class="nav-link__icon">✉️</span>
+          <span class="nav-link__text">Contact</span>
+        </button>
+      </nav>
+      <div class="sidebar__footer">
+        <div class="sidebar__badge">FHIR / HL7 • Demo</div>
+      </div>
+    </aside>
+
+    <!-- Main area -->
+    <div class="main">
+      <!-- Top Navbar -->
+      <header class="topbar">
+        <div class="topbar__left">
+          <h1 class="topbar__title">Universal Health Record Aggregator</h1>
+          <p class="topbar__subtitle">One patient. One unified health record.</p>
+        </div>
+        <div class="topbar__right">
+          <div class="topbar__toggle">
+            <span class="topbar__toggle-label">Dark mode</span>
+            <label class="switch">
+              <input type="checkbox" id="darkModeToggle" />
+              <span class="slider round"></span>
+            </label>
+          </div>
+          <div class="topbar__user">
+            <div class="topbar__user-avatar">DR</div>
+            <div class="topbar__user-info">
+              <span class="topbar__user-name">Dr. Rivera</span>
+              <span class="topbar__user-role">Chief Medical Officer</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content Wrapper -->
+      <main class="content">
+        <!-- Home Section -->
+        <section id="home-section" class="page-section active">
+          <div class="hero">
+            <div class="hero__text">
+              <h2 class="hero__title">One Patient. One Unified Health Record.</h2>
+              <p class="hero__subtitle">
+                Aggregate fragmented EMR data across hospitals into a single, secure longitudinal record – powered by FHIR/HL7 interoperability and end-to-end encryption.
+              </p>
+              <div class="hero__actions">
+                <button class="btn btn-primary" data-target="dashboard-section">Launch Patient Dashboard</button>
+                <button class="btn btn-outline" data-target="hospitals-section">View Hospital Integrations</button>
+              </div>
+              <div class="hero__meta">
+                <div class="hero__meta-item">
+                  <span class="hero__meta-number" id="heroPatientsCounter">0</span>
+                  <span class="hero__meta-label">Unified patient records</span>
+                </div>
+                <div class="hero__meta-item">
+                  <span class="hero__meta-number" id="heroHospitalsCounter">0</span>
+                  <span class="hero__meta-label">Connected hospitals</span>
+                </div>
+                <div class="hero__meta-item">
+                  <span class="hero__meta-number" id="heroSyncsCounter">0</span>
+                  <span class="hero__meta-label">Records synced today</span>
+                </div>
+              </div>
+            </div>
+            <div class="hero__preview glass">
+              <h3>FHIR / HL7 Pipeline</h3>
+              <ul class="hero__pipeline">
+                <li>
+                  <span class="dot dot--green"></span>
+                  <span>Hospital EMR</span>
+                  <span class="hero__chip">FHIR R4</span>
+                </li>
+                <li>
+                  <span class="dot dot--blue"></span>
+                  <span>UHRA Aggregation Layer</span>
+                  <span class="hero__chip">Encryption</span>
+                </li>
+                <li>
+                  <span class="dot dot--purple"></span>
+                  <span>Unified Longitudinal Record</span>
+                  <span class="hero__chip">Real-time sync</span>
+                </li>
+              </ul>
+              <div class="hero__status">
+                <span class="status-pill status-pill--success">Live demo environment</span>
+                <span class="status-pill status-pill--info">Synthetic data only</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="features-grid">
+            <article class="feature-card glass">
+              <h3>Secure APIs</h3>
+              <p>Hardened REST endpoints with OAuth 2.0 and fine-grained scopes for data access.</p>
+              <span class="feature-tag">Zero-trust ready</span>
+            </article>
+            <article class="feature-card glass">
+              <h3>FHIR / HL7 Interoperability</h3>
+              <p>Normalize data from heterogeneous EMRs into FHIR resources and HL7 messages.</p>
+              <span class="feature-tag">Standards first</span>
+            </article>
+            <article class="feature-card glass">
+              <h3>Real-time Sync</h3>
+              <p>Detect and reconcile updates across hospital systems in near real-time.</p>
+              <span class="feature-tag">Sub-minute latency</span>
+            </article>
+            <article class="feature-card glass">
+              <h3>Encryption</h3>
+              <p>End-to-end encryption for data in transit and at rest with modern ciphers.</p>
+              <span class="feature-tag">AES-256 / TLS 1.3</span>
+            </article>
+            <article class="feature-card glass">
+              <h3>Cloud Backup</h3>
+              <p>Redundant, encrypted backups and automated disaster recovery drills.</p>
+              <span class="feature-tag">Multi-region</span>
+            </article>
+            <article class="feature-card glass">
+              <h3>Auditability</h3>
+              <p>Immutable audit logs for every access, mutation, and integration event.</p>
+              <span class="feature-tag">Compliance ready</span>
+            </article>
+          </div>
+        </section>
+
+        <!-- Dashboard Section -->
+        <section id="dashboard-section" class="page-section">
+          <div class="section-header">
+            <div>
+              <h2>Patient Dashboard</h2>
+              <p>Manage unified patient records aggregated from connected hospital systems.</p>
+            </div>
+            <div class="section-header__actions">
+              <button id="exportJsonBtn" class="btn btn-secondary">Export JSON</button>
+            </div>
+          </div>
+
+          <div class="dashboard-grid">
+            <!-- Add / Search -->
+            <div class="dashboard-left">
+              <div class="card glass">
+                <h3>Add Patient</h3>
+                <form id="patientForm" class="form-grid">
+                  <div class="form-field">
+                    <label for="patientName">Full name</label>
+                    <input type="text" id="patientName" required />
+                  </div>
+                  <div class="form-field">
+                    <label for="patientAge">Age</label>
+                    <input type="number" id="patientAge" min="0" max="120" required />
+                  </div>
+                  <div class="form-field">
+                    <label for="patientBloodGroup">Blood group</label>
+                    <select id="patientBloodGroup" required>
+                      <option value="">Select</option>
+                      <option value="A+">A+</option>
+                      <option value="A-">A-</option>
+                      <option value="B+">B+</option>
+                      <option value="B-">B-</option>
+                      <option value="AB+">AB+</option>
+                      <option value="AB-">AB-</option>
+                      <option value="O+">O+</option>
+                      <option value="O-">O-</option>
+                    </select>
+                  </div>
+                  <div class="form-field">
+                    <label for="patientHospital">Hospital</label>
+                    <input type="text" id="patientHospital" placeholder="e.g. City General" required />
+                  </div>
+                  <div class="form-field">
+                    <label for="patientDiagnosis">Diagnosis</label>
+                    <input type="text" id="patientDiagnosis" required />
+                  </div>
+                  <div class="form-field">
+                    <label for="patientLastVisit">Last visit</label>
+                    <input type="date" id="patientLastVisit" required />
+                  </div>
+                  <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Add Patient</button>
+                    <button type="reset" class="btn btn-ghost">Clear</button>
+                  </div>
+                </form>
+              </div>
+
+              <div class="card glass">
+                <h3>Search Patients</h3>
+                <div class="search-row">
+                  <input
+                    type="text"
+                    id="patientSearchInput"
+                    placeholder="Search by name, hospital, or diagnosis..."
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Table -->
+            <div class="dashboard-right">
+              <div class="card glass card--table">
+                <div class="table-header">
+                  <h3>Unified Patient Records</h3>
+                  <span id="patientsCountBadge" class="badge">0 Patients</span>
+                </div>
+                <div class="table-wrapper">
+                  <table class="data-table" id="patientsTable">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Blood</th>
+                        <th>Hospital</th>
+                        <th>Last Visit</th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- JS populated -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Hospitals Section -->
+        <section id="hospitals-section" class="page-section">
+          <div class="section-header">
+            <div>
+              <h2>Hospital Integrations</h2>
+              <p>Simulated FHIR/HL7 connections to multiple EMR vendors.</p>
+            </div>
+          </div>
+
+          <div class="hospitals-grid" id="hospitalsGrid">
+            <!-- Cards populated by JS -->
+          </div>
+        </section>
+
+        <!-- Security Section -->
+        <section id="security-section" class="page-section">
+          <div class="section-header">
+            <div>
+              <h2>Security & Compliance</h2>
+              <p>Defense in depth for clinical-grade data protection.</p>
+            </div>
+          </div>
+
+          <div class="security-grid">
+            <article class="security-card glass">
+              <div class="security-card__icon">🔐</div>
+              <h3>OAuth 2.0</h3>
+              <p>Scoped access tokens, refresh flows, and client credentials tailored for EMR integrations.</p>
+              <ul>
+                <li>Fine-grained scopes</li>
+                <li>Short-lived access tokens</li>
+                <li>Rotating refresh secrets</li>
+              </ul>
+            </article>
+            <article class="security-card glass">
+              <div class="security-card__icon">🧬</div>
+              <h3>End-to-End Encryption</h3>
+              <p>Data encrypted in transit and at rest with modern cipher suites and key management.</p>
+              <ul>
+                <li>TLS 1.3 for transport</li>
+                <li>Field-level encryption</li>
+                <li>HSM-backed keys</li>
+              </ul>
+            </article>
+            <article class="security-card glass">
+              <div class="security-card__icon">📜</div>
+              <h3>HIPAA Compliance</h3>
+              <p>Technical safeguards aligned with HIPAA, including access controls and integrity checks.</p>
+              <ul>
+                <li>Role-based access control</li>
+                <li>PHI minimization</li>
+                <li>Breach notification workflows</li>
+              </ul>
+            </article>
+            <article class="security-card glass">
+              <div class="security-card__icon">📊</div>
+              <h3>Audit Logs</h3>
+              <p>Immutable, queryable audit trails for every API call and record mutation.</p>
+              <ul>
+                <li>Write-once logs</li>
+                <li>Cryptographic signing</li>
+                <li>Fine-grained filters</li>
+              </ul>
+            </article>
+            <article class="security-card glass">
+              <div class="security-card__icon">🛡️</div>
+              <h3>Secure Tokens</h3>
+              <p>Signed, time-bound tokens with audience and issuer validation on every request.</p>
+              <ul>
+                <li>JWT with rotation</li>
+                <li>Audience isolation</li>
+                <li>Device fingerprints</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <!-- Analytics Section -->
+        <section id="analytics-section" class="page-section">
+          <div class="section-header">
+            <div>
+              <h2>Analytics</h2>
+              <p>Operational insights into your unified health record pipeline.</p>
+            </div>
+          </div>
+
+          <div class="analytics-grid">
+            <div class="card glass analytics-card">
+              <div class="analytics-card__header">
+                <h3>Patients per Hospital</h3>
+                <span class="badge badge--soft">Live from dashboard</span>
+              </div>
+              <canvas id="patientsPerHospitalChart" width="400" height="220"></canvas>
+            </div>
+            <div class="card glass analytics-card">
+              <div class="analytics-card__header">
+                <h3>Records Synced Today</h3>
+                <span class="badge badge--soft">Synthetic metric</span>
+              </div>
+              <div class="analytics-metric">
+                <span id="recordsSyncedCounter" class="analytics-metric__number">0</span>
+                <span class="analytics-metric__label">FHIR resources processed</span>
+              </div>
+              <canvas id="recordsSyncedChart" width="400" height="150"></canvas>
+            </div>
+            <div class="card glass analytics-card">
+              <div class="analytics-card__header">
+                <h3>Active Connections</h3>
+                <span class="badge badge--soft">Hospitals section</span>
+              </div>
+              <div class="analytics-metric">
+                <span id="activeConnectionsCounter" class="analytics-metric__number">0</span>
+                <span class="analytics-metric__label">Connected hospital EMRs</span>
+              </div>
+              <canvas id="activeConnectionsChart" width="400" height="150"></canvas>
+            </div>
+          </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact-section" class="page-section">
+          <div class="section-header">
+            <div>
+              <h2>Contact</h2>
+              <p>Get in touch about pilots, integrations, or security reviews.</p>
+            </div>
+          </div>
+
+          <div class="card glass contact-card">
+            <form id="contactForm" class="form-grid">
+              <div class="form-field">
+                <label for="contactName">Name</label>
+                <input type="text" id="contactName" required />
+              </div>
+              <div class="form-field">
+                <label for="contactEmail">Email</label>
+                <input type="email" id="contactEmail" required />
+              </div>
+              <div class="form-field form-field--full">
+                <label for="contactMessage">Message</label>
+                <textarea id="contactMessage" rows="4" required></textarea>
+              </div>
+              <div class="form-actions form-field--full">
+                <button type="submit" class="btn btn-primary">Send Secure Message</button>
+              </div>
+            </form>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <!-- Patient Modal -->
+  <div id="patientModal" class="modal">
+    <div class="modal__backdrop"></div>
+    <div class="modal__content glass">
+      <button class="modal__close" id="closePatientModal">&times;</button>
+      <h3>Patient Details</h3>
+      <div id="patientModalBody" class="modal__body">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div id="toastContainer" class="toast-container"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
