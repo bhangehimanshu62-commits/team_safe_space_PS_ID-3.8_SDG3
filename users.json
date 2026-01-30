@@ -1,0 +1,14 @@
+[
+  {
+    "userId": "1",
+    "email": "hospital@demo.com",
+    "password": "hospital123",
+    "role": "hospital"
+  },
+  {
+    "userId": "2",
+    "email": "patient@demo.com",
+    "password": "patient123",
+    "role": "patient"
+  }
+]
