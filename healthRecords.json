@@ -1,0 +1,53 @@
+[
+  {
+    "patientId": "2",
+    "name": "Demo Patient",
+    "bloodType": "O+",
+    "allergies": [],
+    "conditions": [],
+    "medications": [],
+    "lastUpdated": "2025-01-31"
+  },
+  {
+    "patientId": "u2",
+    "name": "John Doe",
+    "bloodGroup": "O+",
+    "conditions": ["Diabetes"],
+    "lastUpdated": "2026-01-20"
+  },
+  {
+    "patientId": "u3",
+    "name": "Aisha Patel",
+    "bloodGroup": "A-",
+    "conditions": ["Hypertension"],
+    "lastUpdated": "2026-01-15"
+  },
+  {
+    "patientId": "u4",
+    "name": "Rahul Sharma",
+    "bloodGroup": "B+",
+    "conditions": ["Asthma"],
+    "lastUpdated": "2026-01-18"
+  },
+  {
+    "patientId": "u5",
+    "name": "Neha Gupta",
+    "bloodGroup": "O-",
+    "conditions": ["Allergies", "Diabetes"],
+    "lastUpdated": "2026-01-22"
+  },
+  {
+    "patientId": "u6",
+    "name": "Karan Verma",
+    "bloodGroup": "AB+",
+    "conditions": ["Hypertension", "Thyroid"],
+    "lastUpdated": "2026-01-19"
+  },
+  {
+    "patientId": "u7",
+    "name": "Simran Kaur",
+    "bloodGroup": "A+",
+    "conditions": ["Heart Disease"],
+    "lastUpdated": "2026-01-17"
+  }
+]
